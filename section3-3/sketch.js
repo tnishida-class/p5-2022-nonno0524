@@ -1,12 +1,12 @@
 // テキスト「キーボード操作に反応する」
 let x, y, vx, vy;
-const g=10;
+const g=1;
 const vyMax=15
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
-  x = 0;
-  y = height;
+  x = width/2;
+  y = height/2;
 }
 
 function draw(){
@@ -16,7 +16,7 @@ function draw(){
   y+=vy;
   vy=constrain(vy,-vyMax,vyMax);
   if(y>height){
-    y=height
+    y=constrain(y,0,height)
   }
   if(keyIsDown(LEFT_ARROW)){ x -= 5; }
   if(keyIsDown(RIGHT_ARROW)){ x += 5; }
@@ -35,7 +35,7 @@ function keyPressed(){
     y = height;
     vy=0;
   }
-  //if(key==" "){y-=15}
+  if(key==" "){y+=15}
 }
 
 // イベントハンドラを使用するパターン
