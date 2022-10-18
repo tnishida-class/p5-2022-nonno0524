@@ -23,7 +23,7 @@ function draw(){
   // BLANK[1]
   let size=count+100;
   ellipse(x, y, size);
-  if(keyIsDown(" ".charCodeAt(0))){
+  if(keyIsDown(ENTER)){
     count=(count+5)%cycle;
   }
 }
