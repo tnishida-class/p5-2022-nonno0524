@@ -6,7 +6,7 @@ function setup(){
   // 配列をランダムに初期化する
   let scores = [];
   for(let i = 0; i < 10; i++){
-    scores[i] = random(60, 100); // 60以上100未満のランダムな数を代入
+    scores[i] = random(10, 100); // 60以上100未満のランダムな数を代入
   }
   console.log(scores);
 
@@ -64,13 +64,13 @@ function setup(){
     // BLANK[4] ヒント: 条件分岐を使って色を変更します
     rect(i * dx+2, height - h, dx-4, h);
     fill(128);
-    text(scores[i].toPrecision(3), i * dx, height - h);
+    text(scores[i].toPrecision(3), i * dx, height - h); 
   }
-  stroke(0,255,0)
-  line(0,average,width,average)
-  stroke(0)
-  fill(0)
-  text(average.toPrecision(3), 0, average)
-
   // BLANK[5] 平均点の線を引きます
+  const a = height * average / 100
+  stroke(0,255,0);
+  line(0, height-a, width, height-a);
+  stroke(0);
+  fill(0);
+  text(average.toPrecision(3), 0, height-a)
 }
