@@ -65,9 +65,12 @@ function setup(){
     rect(i * dx+2, height - h, dx-4, h);
     fill(128);
     text(scores[i].toPrecision(3), i * dx, height - h);
-    
-    
   }
+  stroke(0,255,0)
+  line(0,average,width,average)
+  stroke(0)
+  fill(0)
+  text(average.toPrecision(3), 0, average)
 
   // BLANK[5] 平均点の線を引きます
 }
