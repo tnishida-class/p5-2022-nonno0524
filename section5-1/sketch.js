@@ -7,6 +7,7 @@ function setup(){
     let theta = TWO_PI * i / 12;
     let x = 100 + cos(theta) * 50;
     let y = 100 + sin(theta) * 50;
+    stroke(255,255,0)
     fill(255,255,0)
     star(x, y, 10);
   }
