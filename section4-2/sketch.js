@@ -19,14 +19,14 @@ function draw(){
   }
 }
 
-function mouseDragged(){
-  const dx = mouseX - pmouseX;
-  const dy = mouseY - pmouseY;
-  if(mag(dx, dy) > 5){
-    const b = { x: mouseX, y: mouseY, size: 20, vx: dx, vy: dy };
-    balls.push(b);
-  }
-}
+//function mouseDragged(){
+  //const dx = mouseX - pmouseX;
+  //const dy = mouseY - pmouseY;
+  //if(mag(dx, dy) > 5){
+    //const b = { x: mouseX, y: mouseY, size: random(10,100), vx: dx, vy: dy };
+    //balls.push(b);
+  //}
+//}
 
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);

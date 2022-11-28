@@ -7,32 +7,36 @@ function setup(){
   createCanvas(windowWidth, windowHeight);
   x = width / 2;
   y = height / 2;
-  vx = 8;
-  vy = 8;
+  //vx = 2;
+  vy = 5;
 }
 
 function draw(){
   background(160, 192, 255);
   ellipse(x, y, 20, 20);
-  x += vx;
+  //x += vx;
   y += vy;
 
   // 重力（コメント機能でオンオフ切り替えて実行してみましょう）
   vy = constrain(vy + g, -vyMax, vyMax);
 
-  // 端の処理パターン (1) 反対側から出てくる
-  // if(x > width){ x = 0; }
-  // else if(x < 0){ x = width; }
-  // if(y > height){ y = 0; }
-  // if(y < 0){ y = height; }
+   //端の処理パターン (1) 反対側から出てくる
+   //if(x > width){ x = 0; }
+   //else if(x < 0){ x = width; }
+   //if(y > height){ y = 0; }
+   //if(y < 0){ y = height; }
 
 　// 端の処理パターン (2) 跳ね返る
-  if(x < 0 || x > width){ vx = -1 * vx; }
-  if(y > height){ vy = -1 * vy; }
+  //if(x < 0 || x > width){ vx = -1 * vx; }
+  //if(y > height){ vy = -1 * vy; }
   x = constrain(x, 0, width);
   y = constrain(y, 0, height);
+  if(keyIsDown(" ".charCodeAt(0))){
+    vy-=5;
+  }
+  //if(keyIsDown(LEFTARROW)){x-=2;}
+  //if(keyIsDown(RIGHTARROW)){x+=2;}
 }
-
 function windowResized(){
-  resizeCanvas(windowWidth, windowHeight);
+  canvasResized(windowWidth,windowHeight)
 }
